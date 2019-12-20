@@ -1,28 +1,24 @@
 function dataHandling(input){
+    
     var firstDimensionInputSize = input.length;
     var secondDimensionInputSize = input[0].length;
 
     for(i=0;i<firstDimensionInputSize;i++){
-        for(j=0;i<secondDimensionInputSize;j++){
-            switch(j){
-                case 0:
-                    console.log('Nomor ID: ' + input[i][0]);
-                    break;
-                case 1:
-                    console.log('Nama Lengkap: ' + input[i][1]);
-                    break;
-                case 2:
-                    console.log('TTL: ' + input[i][2] + ' ' + input[i][3]);
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    console.log('Hobi: ' + input[i][4]);
-                    break;
-                default:
-                    console.log();break;return;
+        for(j=0;j<secondDimensionInputSize;j++){
+            if(j==0){
+                console.log('Nomor ID: ' + input[i][j]);
+            }
+            else if(j==1){
+                console.log('Nama Lengkap: ' + input[i][j]);
+            }
+            else if(j==2){
+                console.log('TTL: ' + input[i][j] + ' ' + input[i][j+1]);
+            }
+            else if(j==4){
+                console.log('Hobi: ' + input[i][j]);
             }
         }
+        console.log();
     }
     return;
 }
