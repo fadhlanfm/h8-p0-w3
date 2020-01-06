@@ -5,7 +5,7 @@ function balikString(input){
         output[i]=input[reverseIndexing];
         reverseIndexing--;
     }
-    return output;
+    return output.join('');
 }
 
 console.log(balikString('hello world!'));
