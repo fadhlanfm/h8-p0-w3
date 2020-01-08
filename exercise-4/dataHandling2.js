@@ -23,6 +23,7 @@ function dataHandling2(input){
     //
     var tanggalLahir = input[3];
     var tanggalLahirTanpaGaris = tanggalLahir.split('/');
+
     var angkabulan = tanggalLahirTanpaGaris[1];    
     switch(angkabulan){
         case '01': 
@@ -65,8 +66,10 @@ function dataHandling2(input){
     console.log(bulan);
     // Mei
 
+    var tanggalNih = tanggalLahir.split('/').join('-');
+    
     console.log(tanggalLahirTanpaGaris.sort(function(a, b){return b-a}));
-    console.log(tanggalLahirTanpaGaris.join('-'));
+    console.log(tanggalNih);
     return input[1].slice(0,15);
 }
 
