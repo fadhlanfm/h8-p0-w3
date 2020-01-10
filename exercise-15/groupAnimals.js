@@ -4,7 +4,6 @@ function groupAnimals(animals) {
   var dictionary = 'abcdefghijklmnopqrstuvwxyz';
 
   for(i=0;i<dictionary.length;i++){
-    var found = false;
     var subOutput = [];
     for(j=0;j<animals.length;j++){ 
       if(animals[j][0]==dictionary[i]){
