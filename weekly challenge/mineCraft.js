@@ -1,4 +1,3 @@
-
 /**
 
  * ===========
@@ -75,9 +74,36 @@
 
  */
 
-/* START OF PSEUDOCODE */
+/* START OF PSEUDOCODE
 
-/* END OF PSEUDOCODE */
+  PROCEDURE mineCraft
+    READ mine: 2D array, steps: integer
+    SET targets <= [[0, 'c'], [0, 's'], [0, 'g'], [0, 'd']],
+        output <= empty array
+
+    FOR each row of mine
+      FOR each column of mine
+        IF steps IS GREATER THAN zero THEN
+          FOR each row of targets
+            IF mine[each row][each column] IS EQUAL TO targets[each row][first column] THEN
+              DO add one to targets[each row][first column]
+            END IF
+          END FOR
+          DO substract one to steps
+        END IF
+      END FOR
+    END FOR
+
+    FOR each row of targets
+      IF targets[each row][first column] NOT EQUAL TO zero THEN
+        DO move the selected row of targets to output
+      END IF
+    END FOR
+
+    PRINT output
+  END PROCEDURE
+
+END OF PSEUDOCODE */
 
 function mineCraft(mine, steps) {
 
