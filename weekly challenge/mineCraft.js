@@ -1,5 +1,4 @@
 
-
 /**
 
  * ===========
@@ -76,29 +75,36 @@
 
  */
 
+/* START OF PSEUDOCODE */
+
+/* END OF PSEUDOCODE */
+
 function mineCraft(mine, steps) {
 
-    var targets = ['c', 's', 'g', 'd'];
-    var result = [];
+  var targets = [[0, 'c'], [0, 's'], [0, 'g'], [0, 'd']];
+  var output = [];
+  
 
-    for(h=0;h<targets.length;h++){
-        var counter = 0;
-        if(steps>1){
-            for(i=0;i<mine.length;i++){
-                steps--;
-                for(j=0;j<mine[i].length;j++){
-                    
-                    if(targets[h] === mine[i][j]){
-                        counter++;
-                    }
-                }
-            }
-            if(counter>0){
-                result.push([counter, targets[h]]);
-            }
+  for(i=0;i<mine.length;i++){
+    for(j=0;j<mine[i].length;j++){
+      if(steps>0){
+        for(k=0;k<targets.length;k++){
+          if(mine[i][j] === targets[k][1]){
+            targets[k][0]++;
+          }
         }
-    }   
-    return result;
+        steps--;
+      }
+    }
+  }
+  
+  for(i=0;i<targets.length;i++){
+    if(targets[i][0] !== 0){
+      output.push(targets[i]);
+    }
+  }
+
+  return output;
 }
 
 var mine1 = [
@@ -111,7 +117,7 @@ var mine1 = [
 
 ];
 
-// console.log(mineCraft(mine1, 10));
+console.log(mineCraft(mine1, 10));
 
 // [[1, copper] [1, silver] [1, gold]]
 
@@ -145,7 +151,6 @@ var mine3 = [
 
 ];
 
-// console.log(mineCraft(mine3, 94));
+console.log(mineCraft(mine3, 94));
 
 // [ [ 3, 'copper' ], [ 2, 'silver' ], [ 2, 'gold' ], [ 1, 'diamond' ] ]
-
