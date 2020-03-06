@@ -1,5 +1,6 @@
 function groupAnimals(animals) {
   // you can only write your code here!
+  
   var output = [];
   var dictionary = 'abcdefghijklmnopqrstuvwxyz';
 

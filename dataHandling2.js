@@ -1,6 +1,5 @@
 var input = ["0001", "Roman Alamsyah ", "Bandar Lampung", "21/05/1989", "Membaca"];
 
-
 /**
  * keluaran yang diharapkan (pada console)
  *
@@ -14,7 +13,7 @@ var input = ["0001", "Roman Alamsyah ", "Bandar Lampung", "21/05/1989", "Membaca
 function dataHandling2(input){
 
     //
-    input.splice(1, 1, 'Roman Alamsyah Elsharawy');
+    input.splice(1, 1, 'Roman Alamsyah Elsharawy'); //(<array>.splice(<index>,<berapa item yang mau displice>,<splice-annya>))
     input.splice(2, 1, 'Provinsi Bandar Lampung');
     input.splice(4, 2, 'Pria', 'SMA Internasional Metro');
     console.log(input);
@@ -22,9 +21,9 @@ function dataHandling2(input){
 
     //
     var tanggalLahir = input[3];
-    var tanggalLahirTanpaGaris = tanggalLahir.split('/');
+    var tanggalLahirTanpaGaris = tanggalLahir.split('/'); //split kebalikannya join. split: string jadi array. join: array jadi string
 
-    var angkabulan = tanggalLahirTanpaGaris[1];    
+    var angkabulan = tanggalLahirTanpaGaris[1];
     switch(angkabulan){
         case '01': 
             var bulan = "Januari";
@@ -70,7 +69,8 @@ function dataHandling2(input){
     
     console.log(tanggalLahirTanpaGaris.sort(function(a, b){return b-a}));
     console.log(tanggalNih);
-    return input[1].slice(0,15);
+    console.log(input[1].slice(0,15));  //slice array   : <array>.slice(<mulai dari index>,<sampai dari index (opt.)>)
+                                        //slice string  : sama aja, cuman berjalan pada string
 }
 
 console.log(dataHandling2(input));

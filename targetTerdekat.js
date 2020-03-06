@@ -2,7 +2,6 @@ function targetTerdekat(arr) {
     // you can only write your code here!
     var indexOfO = [];
     var indexOfX = [];
-    var arrayKosong = [];
     var perjarakan = [];
 
     for(i=0;i<arr.length;i++){

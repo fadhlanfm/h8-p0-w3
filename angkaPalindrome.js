@@ -16,17 +16,12 @@ function palindrome(kata) {
 
 function angkaPalindrome(num) {
   // you can only write your code here!
-  var isPalindrome = false;
-
-  while(!isPalindrome){
-    var stringyNum = num.toString();
-
-    if(!palindrome(stringyNum)){
-      num++;
-    }else{
-      isPalindrome = true;
-    }
-  }
+  var num = num.toString();
+  do{
+    num = parseInt(num);
+    num++
+    var num = num.toString();
+  }while(!palindrome(num));
   return num;
 }
   

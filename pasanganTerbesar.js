@@ -1,16 +1,26 @@
 function pasanganTerbesar(num) {
     // you can only write your code here!
-    var stringyNum = num.toString();
-    var output = stringyNum[0]+stringyNum[1];
-
-    for(i=0;i<stringyNum.length-1;i++){
-        if(output>=stringyNum[i]+stringyNum[i+1]){
-            output = output;
+    if(!num){
+        return 'please input number'
+    }else{
+        var stringyNum = num.toString();
+        if(stringyNum.length<2){
+            return 'please input at least 2 digit'            
         }else{
-            output = stringyNum[i]+stringyNum[i+1];   
+            var output = stringyNum[0]+stringyNum[1];
+
+            for(i=2;i<stringyNum.length-1;i++){
+                if(output>=stringyNum[i]+stringyNum[i+1]){
+                    output = output;
+                }else{
+                    output = stringyNum[i]+stringyNum[i+1];   
+                }
+            }
+            return output;
         }
+        
     }
-    return output;
+    
   }
   
   // TEST CASES

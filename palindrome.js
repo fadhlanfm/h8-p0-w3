@@ -13,13 +13,13 @@ function palindrome(kata) {
       return false;
   }
 
-  //versi 2
+  //versi 2 (best case lebih cepat)
 //   var setengahKata = Math.floor(kata.length/2);
 //   var indexing = 0;
 //   var result = false;
 //   for(i=setengahKata;i>=0;i--){
 //     if(kata[i]!=kata[kata.length - 1 - indexing]){
-//         result =  false;
+//         return false;
 //     }else{
 //         result =  true;
 //     }
