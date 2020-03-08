@@ -9,7 +9,7 @@ function pasanganTerbesar(num) {
         }else{
             var output = stringyNum[0]+stringyNum[1];
 
-            for(i=2;i<stringyNum.length-1;i++){
+            for(i=0;i<stringyNum.length-1;i++){
                 if(output>=stringyNum[i]+stringyNum[i+1]){
                     output = output;
                 }else{
