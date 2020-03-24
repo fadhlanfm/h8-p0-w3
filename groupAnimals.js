@@ -1,22 +1,30 @@
 function groupAnimals(animals) {
   // you can only write your code here!
-  
   var output = [];
-  var dictionary = 'abcdefghijklmnopqrstuvwxyz';
-
-  for(i=0;i<dictionary.length;i++){
-    var subOutput = [];
-    for(j=0;j<animals.length;j++){ 
-      if(animals[j][0]==dictionary[i]){
-        found = true;
-        subOutput.push(animals[j]);
-      }
-    } 
-    if (subOutput.length>0) {
-      output.push(subOutput);
-    }
+  if(animals.length===0){
+    return output
   }
-  return output;
+  else{
+    for(i=0;i<animals.length;i++){
+      for(j=0;j<animals.length-i-1;j++){
+        if(animals[j][0]>animals[j+1][0]){
+          var tmp = animals[j]
+          animals[j] = animals[j+1]
+          animals[j+1] = tmp
+        }
+      }
+    }
+    
+    output.push([animals[0]])
+    for(k=1;k<animals.length;k++){
+      if(animals[k][0]==output[output.length-1][0][0]){
+        output[output.length-1].push(animals[k])
+      }else{
+        output.push([animals[k]])
+      }
+    }
+    return output
+  }
 }
 
 // TEST CASES
